@@ -6,21 +6,35 @@ Projeto de RPG jogado pelo terminal, desenvolvido em Python. O jogador cria um p
 
 - Escolha entre 3 classes: `Guerreiro`, `Mago` e `Arqueiro`
 - Sistema de batalha por turnos
-- Ataque padrão e habilidade especial por classe
+- Ataque padrão, habilidade especial e habilidades de ascensão
 - Sistema de vida, defesa, mana e stamina
 - Ganho de experiência e evolução de nível
 - Sistema de conquistas
-- Encontros com monstros comuns e chefões
-- Menu pós-batalha para descansar, ver status e encerrar a aventura
+- Encontros com monstros comuns e chefes
+- Save e carregamento em JSON
+- Menu pós-batalha com descanso, conquistas, contratos, save e encerramento de aventura
 
 ## Estrutura do projeto
 
 ```text
 .
+|-- rpg/
+|   |-- __init__.py
+|   |-- achievements.py
+|   |-- battle_flow.py
+|   |-- campaign.py
+|   |-- combat.py
+|   |-- engine.py
+|   |-- entities.py
+|   |-- interface.py
+|   |-- market.py
+|   |-- progression.py
+|   |-- savegame.py
+|   |-- session.py
+|   `-- state.py
 |-- rpg_v1.py
 |-- README.md
-|-- requirements.txt
-```
+`-- requirements.txt
 
 ## Requisitos
 
@@ -44,11 +58,13 @@ No terminal, dentro da pasta do projeto:
 python rpg_v1.py
 ```
 
-Se o seu sistema usar `python3`, execute:
+Se preferir usar o pacote diretamente:
 
 ```bash
-python3 rpg_v1.py
+python -m rpg
 ```
+
+O save é gravado em `data/savegame.json`.
 
 ## Como jogar
 
@@ -57,9 +73,10 @@ python3 rpg_v1.py
 3. Durante a batalha, selecione uma ação:
    - `1` para ataque padrão
    - `2` para usar a habilidade especial
-   - `3` para ver o status
-   - `4` para tentar fugir
-4. Entre batalhas, use o menu para continuar, descansar ou ver conquistas.
+   - `3` para usar habilidade de ascensão
+   - `4` para ver o status
+   - `5` para tentar fugir
+4. Entre batalhas, use o menu para continuar, descansar, ver conquistas, visitar o mercador sombrio, salvar e sair ou encerrar a aventura.
 
 ## Classes disponíveis
 
@@ -82,7 +99,7 @@ python3 rpg_v1.py
 
 - O jogo é totalmente interativo via terminal.
 - Os inimigos são gerados aleatoriamente.
-- A cada 10 inimigos derrotados, um chefão aparece.
+- A cada 10 vitórias, a rotação de contratos sombrios pode ser ativada.
 
 ## Autor
 
