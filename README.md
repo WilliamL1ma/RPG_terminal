@@ -1,4 +1,4 @@
-u# RPG de Terminal em Python
+## RPG de Terminal em Python
 
 Projeto de RPG jogado pelo terminal, desenvolvido em Python. O jogador cria um personagem, escolhe uma classe e enfrenta monstros e chefes em batalhas por turnos.
 
